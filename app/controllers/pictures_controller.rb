@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[ show edit update destroy ]
+  before_action :set_picture, only: %i[ show edit update destroy]
 
   # GET /pictures or /pictures.json
   def index
@@ -40,7 +40,8 @@ class PicturesController < ApplicationController
   # PATCH/PUT /pictures/1 or /pictures/1.json
   def update
     respond_to do |format|
-      if @picture.update(picture_params)
+      if params[:id] =! "confirm"
+      elsif @picture.update(picture_params)
         format.html { redirect_to @picture, notice: "Picture was successfully updated." }
         format.json { render :show, status: :ok, location: @picture }
       else

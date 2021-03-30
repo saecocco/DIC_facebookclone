@@ -2,7 +2,9 @@
 
 <p>
   <strong>Index:</strong>
+    <!-- @picture.user  %> -->
   <%= @picture.post %>
+  <%= image_tag @picture.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |

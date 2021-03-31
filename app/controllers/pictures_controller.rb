@@ -22,7 +22,8 @@ class PicturesController < ApplicationController
   # POST /pictures or /pictures.json
   def create
     @picture = Picture.new(picture_params)
-    # @picture.user_id = current_user.id
+    # @user = @picture.user.name
+    @picture.user_id = current_user.id
       if params[:back]
         render :new
       else
@@ -63,7 +64,8 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
-    # @picture.user_id = current_user.id
+    # @user = @picture.user.name
+    @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
 
@@ -75,5 +77,9 @@ class PicturesController < ApplicationController
   def picture_params
     params.require(:picture).permit(:index,:post,:image,:image_cache)
   end
+
+  # def user_params
+  #   params.require(:user).permit(:name,:user_id)
+  # end
 
 end

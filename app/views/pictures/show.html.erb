@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Index:</strong>
-    <!-- @picture.user  %> -->
-  <%= @picture.post %>
-  <%= image_tag @picture.image.url %>
+  <p>User:<%= @picture.user.name  %></p>
+  <p>Post:<%= @picture.post %></p>
+  <p>Image:<%= image_tag @picture.image.url %></p>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |

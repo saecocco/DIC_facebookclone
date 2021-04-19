@@ -18,6 +18,7 @@ gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'mimemagic', '0.3.7'
+gem 'jquery-rails'
 
 
 group :development, :test do

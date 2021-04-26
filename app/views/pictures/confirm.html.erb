@@ -1,5 +1,5 @@
 <h3>以下の内容で送信する</h3>
-<%= form_with(model: @picture,url: pictures_path, local: true) do |form| %>
+<%= form_with(model: @picture,url: pictures_path, local: true,) do |form| %>
   <%= form.hidden_field :post %>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
   <%= form.hidden_field :image_cache %>

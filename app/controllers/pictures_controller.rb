@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures or /pictures.json
   def index
-    @pictures = Picture.all.order(created_at: :desc)
+    @pictures = Picture.all
   end
 
   # GET /pictures/1 or /pictures/1.json
@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     # @user = @picture.user.name
-    @picture.user_id = current_user.id
+    # @picture.user_id = current_user.id
       if params[:back]
         render :new
       else
@@ -65,7 +65,7 @@ class PicturesController < ApplicationController
   def confirm
     @picture = Picture.new(picture_params)
     # @user = @picture.user.name
-    @picture.user_id = current_user.id
+    # @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
 
@@ -75,7 +75,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:index,:post,:image,:image_cache)
+    params.require(:picture).permit(:index,:post,:image,:image_cache,:user_id)
   end
 
   # def user_params

@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy]
-
+  before_action :logged_in?
   # GET /pictures or /pictures.json
   def index
     @pictures = Picture.all
@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
 
   # POST /pictures or /pictures.json
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     # @user = @picture.user.name
     # @picture.user_id = current_user.id
       if params[:back]

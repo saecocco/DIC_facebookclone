@@ -1,8 +1,17 @@
+<head>
 <h1>Log in</h1>
+</head>
+<div class="session_new">
+<h2>最近のログイン</h2>
+<p>写真をクリックするか、アカウントを追加してください。</p>
+</div>
+<div class="session_form">
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
   <%= f.label :email %>
   <%= f.email_field :email %>
   <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log in" %>
+  <%= f.password_field :password %><br>
+  <button type="button" class="btn btn-primary">Log in</button>
 <% end %>
+  <%= link_to "新しいアカウントを作成", new_user_path %>
+</div>

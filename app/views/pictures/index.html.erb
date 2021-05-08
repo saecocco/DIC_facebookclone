@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Pictures</h1>
+<head>
+  <h1>Pictures</h1>
+</head>
 
 <table>
   <thead>
@@ -11,10 +12,10 @@
   </thead>
 
   <tbody>
+    <%= link_to 'New Picture', new_picture_path %>
     <% @pictures.each do |picture| %>
     <div class="post">
       <tr>
-        <!-- <td> picture.user.user_name %></td> -->
         <td><%= picture.post %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
@@ -24,7 +25,4 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Picture', new_picture_path %>

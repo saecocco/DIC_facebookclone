@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f0f2f5;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -81,4 +81,11 @@ div {
 
 label {
   display: block;
+}
+
+.login {
+  text-align: right;
+}
+.post{
+  text-align: center;
 }

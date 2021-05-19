@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <header class="header">
     <% flash.each do |key,value| %>
       <%= content_tag(:div, value,class: "#{key}") %>
     <% end %>
@@ -23,6 +24,6 @@
     <% end %>
     </div>
     <%= yield %>
-
+    </header>
   </body>
 </html>
